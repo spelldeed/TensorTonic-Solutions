@@ -16,7 +16,7 @@ def train_logistic_regression(X: np.ndarray, y: np.ndarray, lr: float = 0.1, ste
     # Write code here
     c,r = X.shape
     w = np.zeros((r,))
-    print((X*w).shape)
+    # print((X*w).shape)
     b = 0.0
     for i in range(0,steps):
         z = X@w + b
@@ -24,7 +24,7 @@ def train_logistic_regression(X: np.ndarray, y: np.ndarray, lr: float = 0.1, ste
         print(p.shape)
         L = (-1/c)*(np.sum((y*np.log(p)) + ((1-y)*np.log(1-p))))
         Lw = (1/c)*np.transpose(X)@(p-y)
-        print(Lw.shape)
+        # print(Lw.shape)
         Lb = (1/c)*(np.sum(p-y))
         w-=(lr*Lw)
         b-=(lr*Lb)
