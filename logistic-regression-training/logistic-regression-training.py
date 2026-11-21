@@ -24,7 +24,7 @@ def train_logistic_regression(X: np.ndarray, y: np.ndarray, lr: float = 0.1, ste
         # print(p.shape)
         err = p - y
         # L = (-1/c)*(np.sum((y*np.log(p)) + ((1-y)*np.log(1-p))))
-        Lw = (1/c)*np.transpose(X)@err
+        Lw = (1/c)*X.T@err
         # print(Lw.shape)
         Lb = (1/c)*(np.sum(err))
         w-=(lr*Lw)
